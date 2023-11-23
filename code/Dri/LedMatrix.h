@@ -23,26 +23,19 @@ void LedMatrix_Init();
 void LedMatrix_SetLuminance(u8 lumin);
 
 /**
- * @brief 设置要显示的图案, 图案以8*8bit的形式输入
+ * @brief 根据传入的定长数组，按照方向和偏移量更新显存
  *
- * @param pic 要显示的图案，必须为长度8的字节数组
+ * @param pic 要显示的图案指针，u8类型的数组
+ * @param pictureLen 图案数组可用的元素个数
+ * @param shiftCount 图案偏移位数
+ * @param isFromTop 偏移是否从上至下，即是否从74HC595输出的低位开始
  */
-void LedMatrix_SetPic(u8 *pic);
+void LedMatrix_ShiftPic(u8 *pic, u8 pictureLen, u8 shiftCount, u8 isFromTop);
 
 /**
  * @brief 刷新显示图案，需要在主循环中一直调用
  *
  */
 void LedMatrix_Refresh();
-
-void LedMatrix_Refresh_12Times();
-
-void SetRollPic0();
-
-void SetRollPic1();
-
-void SetRollPic2();
-
-void SetRollPic3();
 
 #endif // __LED_MATRIX_H__
