@@ -26,7 +26,7 @@ u8 zero[1] = {0x00};
 
 void main()
 {
-    u8 i=0,j;
+    u8 i=0,j=0;
     LedMatrix_Init(); 
     LedMatrix_SetLuminance(50);
 
